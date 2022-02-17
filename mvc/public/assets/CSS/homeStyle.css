@@ -1,0 +1,146 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,100&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: poppins, sans-serif !important;
+}
+.header{
+    box-sizing: border-box;
+    margin: 10px;
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    border-bottom: 1px solid rgb(102, 102, 102);
+}
+.list a{
+    text-decoration: none;
+    color: black;
+    font-size: 0.9em;
+}
+.list a:hover{
+    color: mediumblue;
+}
+.list{
+    width:40%;
+    height: 50px;
+    /* background-color: chartreuse; */
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.add-movies-container{
+    width: 100%;
+    height: 400px;
+    /* background-color: cornflowerblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.movies{
+    width: 80%;
+    height: 300px;
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: space-around;
+
+}
+.films{
+    width: 300px;
+    height: 270px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    transition: 200ms;
+    border-radius: 3px;
+}
+.films:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+.img{
+    width: 100%;
+    height: 60%;
+    background-size:cover;
+    background-position: center;
+    border-radius: 2px;
+}
+.img-source1{
+    background-image: url('https://static.hbo.com/2022-01/antlers-ka-1920.jpg?w=640');
+}
+.img-source2{
+    background-image: url('https://static.hbo.com/2022-01/cry-macho-ka-1920.jpg?w=640');
+}
+.img-source3{
+    background-image: url('https://static.hbo.com/2022-01/malignant-ka-1920.jpg?w=640');
+}
+.img-source4{
+    background-image: url('https://static.hbo.com/2022-01/nobody-ka-1920.jpg?w=640');
+}
+.description{
+    height: 40%;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.films a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.films p{
+    font-size:0.9rem;
+}
+
+@media screen and (max-width:1110px) {
+    .list{
+        display: none;
+    }
+    .header{
+        justify-content:flex-start;
+    }
+}
+
+.film{
+    width:80%;
+    height: 600px;
+    /* background-color: cornflowerblue; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.film-pic{
+    width: 55%;
+    height: 430px;
+    background-image: url('https://static.hbo.com/2022-01/nightmare-alley-ka-1920.jpg?w=1200');
+    background-size: cover;
+    background-position: center;
+}
+.film-desc{
+    width: 45%;
+    height: 300px;
+    box-sizing: border-box;
+    padding: 20px;
+    /* background-color: crimson; */
+}
+.film p{
+    font-weight: lighter;
+}
+.film a{
+    text-decoration: none;
+    color:cornflowerblue;
+}
+.img-source5{
+background-image: url('https://hbomax-images.warnermediacdn.com/images/GVWIojg4qrMJtGzYJAAXw/tile.jpeg?size=1280x720&format=jpeg&partner=hbomaxcom&v=d661b683ffec9719af1f60a7380ab4a9&productCode=hbomax&host=artist.api.cdn.hbo.com&w=640');
+}
+.img-source6{
+background-image: url('https://hbomax-images.warnermediacdn.com/images/GV1nl6Qaodp6BtAEAAABP/tile.jpeg?size=1280x720&format=jpeg&partner=hbomaxcom&v=121cbf1f91475570a1d15b2e1555e8f0&productCode=hbomax&host=artist.api.cdn.hbo.com&w=640');
+}
+.img-source7{
+background-image: url('https://hbomax-images.warnermediacdn.com/images/GYBmgpwLcl0OLlAEAAAAX/tile.jpeg?size=1280x720&format=jpeg&partner=hbomaxcom&v=4d96ea3c745d2d711f46e0a3b294236d&productCode=hbomax&host=artist.api.cdn.hbo.com&w=640');
+}
+.img-source8{
+background-image: url('https://hbomax-images.warnermediacdn.com/images/GYBNigwS8d4YUkAEAAADi/tile.jpeg?size=1280x720&format=jpeg&partner=hbomaxcom&v=d12c8713cbde7c57497e567e902c9dc5&productCode=hbomax&host=artist.api.cdn.hbo.com&w=640');
+}
+

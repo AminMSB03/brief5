@@ -1,0 +1,100 @@
+
+.content{
+    width: 100%;
+    height: 800px;
+    display: flex;
+}
+.side{
+    width: 20%;
+    height: 100%;
+    /* background-color: cornflowerblue; */
+
+}
+.middle-side{
+    width: 60%;
+    height: 100%;
+    /* background-color: chartreuse; */
+}
+.button{
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+    /* background-color: crimson; */
+}
+.button button{
+    display: flex;
+    justify-self: flex-end;
+}
+form{
+    height:200px;
+}
+.post{
+    margin: auto;
+    padding: 10px;
+    width: 70%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-bottom: 20px;
+    /* justify-content: space-evenly; */
+    /* background-color: darkslateblue ; */
+
+}
+.pro-pic{
+    width: 100px;
+    height: 100px;  
+    background-image: url('http://app.msb/assets/img/profile.jpg ');
+    background-size: cover;
+    background-position: center;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+.head{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.movie-desc{
+    margin-bottom: 7px;
+}
+.movie-pic{
+    width: 60%;
+    height: 500px;
+    margin: 0px auto;
+    /* border: 1px solid rgb(116, 116, 116); */
+    /* background-image: url('https://static.pointculture.be/media/7b/e5/29/cover_va1123_scale_345x750.jpg'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* background-color: aquamarine; */
+}
+form{
+    width: 90%;
+    margin: 0px auto;
+}
+.envoyer{
+    width: 200px;
+}
+.comments{
+    height: 200px;
+    /* background-color: crimson; */
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.comm{
+    display: flex;
+    /* align-items: center; */
+}
+.comment_creator{
+    cursor: pointer;
+    color: black;
+}
+.comment_creator:hover{
+    color: black;
+    text-decoration: none;
+}
