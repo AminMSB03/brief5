@@ -1,0 +1,58 @@
+Tbale of posts : 
+
+
+CREATE TABLE `posts` (
+  `id` int(255) NOT NULL,
+  `id_creator` int(255) NOT NULL,
+  `img_src` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL
+) 
+
+
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `posts`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+---------------------------------------------------------------------
+Table of comments : 
+
+CREATE TABLE `comments` (
+  `id` int(255) NOT NULL,
+  `id_user` int(255) NOT NULL,
+  `img_post` int(255) NOT NULL,
+  `comment` varchar(255) NOT NULL
+) 
+
+
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `posts`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+-----------------------------------------------------------------------
+
+Table of users : 
+
+CREATE TABLE `comments` (
+  `id` int(255) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) 
+
+
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `posts`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+
