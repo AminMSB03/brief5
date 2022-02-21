@@ -37,25 +37,39 @@ class UserController
         $id = $_SESSION['id'];
         $db  = new Users();
         $data['user'] =$db-> getOneUserId($id);
+        
         view::load('login/profile',$data);
     }
+
     public function addPost(){
         session_start();
         $id = $_SESSION['id'];
         $db  = new Users();
-        $data['user'] =$db-> getOneUserId($id);
-        $posts  = new Product();
-        $data['posts'] =$posts-> selectUserPosts($id);
-        $comments  = new Comments ();
-        $data['comments'] =$comments->getAllComments();
+
+        $con = $db->conn;
+        $query = "SELECT posts.description,comments.comment FROM posts LEFT JOIN comments ON posts.id = comments.id_post  WHERE posts.id_creator = $id ";
+        $posts = mysqli_query($con, $query);
+        $result = mysqli_fetch_all($posts,MYSQLI_ASSOC);
+        echo "<pre>";
+        print_r($result);
+        echo "</pre>";
+
+        // $data['user'] =$db-> getOneUserId($id);
+        // $data['users'] =$db-> getAllUsers();
+
+        // $posts  = new Product();
+        // $data['posts'] =$posts-> selectUserPosts($id);
+        // $comments  = new Comments ();
+        // $data['comments'] =$comments->getAllComments();
 
         
-        view::load('profile/addPosts',$data);
-
-
+        // view::load('profile/addPosts',$data);
+        
         
     }
-    public function save(){
+
+
+    public function savePost(){
         if(isset($_POST['add'])){
             $img = htmlspecialchars($_POST['imgScr']);
             $desc = htmlspecialchars($_POST['desc']);
@@ -76,11 +90,15 @@ class UserController
             }
         }
     }
+    
+
+
+
     public function saveComment()
     {
         if(isset($_POST['addComment'])){
             $comment= htmlspecialchars($_POST['comment']);
-            $id_user = htmlspecialchars($_POST['userId']);
+            $id_user = $_SESSION['id'];
             $id_post = htmlspecialchars($_POST['postId']);
             if(!empty($comment) && !empty($id_post)){
                 $db  = new Comments ();
@@ -91,6 +109,27 @@ class UserController
             }else{
                 echo '<script>alert("Make sure your enter all the infos")</script>';
                 view::load('profile/addPosts');
+            }
+
+            
+        }
+    }
+
+    public function commentOtherPosts()
+    {
+        if(isset($_POST['addComment'])){
+            $comment= htmlspecialchars($_POST['comment']);
+            $id_user = htmlspecialchars($_POST['userId']);
+            $id_post = htmlspecialchars($_POST['postId']);
+
+            if(!empty($comment) && !empty($id_post)){
+                $db  = new Comments ();
+                $db->insertComment($id_user, $id_post, $comment);
+                header('location:http://app.msb/user/seePosts');
+                return;
+            }else{
+                echo '<script>alert("Make sure your enter all the infos")</script>';
+                view::load('profile/seePosts');
             }
 
             
@@ -122,6 +161,6 @@ class UserController
         if(isset($_SESSION['id'])){
             session_destroy();
         }
-        view::load('home');
+        view::load('login/index');
     } 
 }

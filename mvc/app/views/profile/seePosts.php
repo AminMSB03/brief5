@@ -57,13 +57,15 @@
                     </div>
                     <div class="movie-pic" style="background-image: url('<?= $post['img_src']?>');"></div>
                     <div class="form">
-                        <form action="">
-                            <input type="hidden" value="<?= $user_now['id']?>">
+                        <form action="http://app.msb/user/commentOtherPosts" method="post">
+                            <!-- <input type="hidden" name="userId" value="<?= $user['id']?>"> -->
+                            <input type="hidden" name="postId" value="<?= $post['id']?>">
+                            <input type="hidden" name="userId" value="<?= $user_now['id']?>">
                             <div class="input-group">
                                 <span class="input-group-text">Comment : </span>
-                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                <textarea class="form-control" aria-label="With textarea" name="comment"></textarea>
                             </div>
-                            <input type="submit" class="btn  btn-primary envoyer">
+                            <input type="submit" class="btn  btn-primary envoyer" name="addComment">
                         </form>
                         <div class="comments">
                             <?php foreach($comments as $comment ):?>

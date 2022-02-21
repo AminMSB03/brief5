@@ -33,6 +33,10 @@ class App{
             $controller = new $this->controller;
             if(method_exists($controller,$this->action)){
                 call_user_func_array([$controller,$this->action],$this->params);
+            }else 
+            {
+
+                echo " This method : " . $this->action . " NOT EXIST";
             }
         }
         else{

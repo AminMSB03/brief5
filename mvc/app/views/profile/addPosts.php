@@ -23,7 +23,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="http://app.msb/user/save" method="post">
+                        <form action="http://app.msb/user/savePost" method="post">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon3">Images URL : </span>
                                 <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="imgScr">
@@ -67,12 +67,17 @@
                     <div class="comments">
                             <?php foreach($comments as $comment ):?>
                         <div class="comm">
-                            <?php if($comment['id_post']==$post['id']):
-                                    if($comment['id_user']==$user['id']):?>
-                                    <a class="comment_creator"><?= $user['nom']?></a>
-                                    <?php endif; ?>
-                                    <p> : <?= $comment['comment']?></p>
-                                <?php endif; ?>
+                            <?php if($comment['id_post']==$post['id']):?>
+                                    <?php foreach($users as $us):?>
+                                        <?php if($comment['id_user']==$us['id']):?>
+                                        <a class="comment_creator"><?= $us['nom']?></a>
+                                        <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    <div class="comm">
+                                        <p> : <?= $comment['comment']?></p>
+                                    </div>
+                                    
+                            <?php endif; ?>
                         </div>
                             <?php endforeach; ?>
                     </div>

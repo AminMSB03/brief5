@@ -78,13 +78,13 @@ form{
     width: 200px;
 }
 .comments{
-    height: 200px;
+    height: 280px;
     /* background-color: crimson; */
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    padding-left: 20px;
 }
 .comm{
     display: flex;

@@ -9,7 +9,8 @@ define("MODELS",APP.'models'.DS);
 define("VIEWS",APP.'views'.DS);
 define("PUBLIC",APP.'public'.DS);
 
-define("UPLOADS",ROOT_PATH.'public'.DS.'uploads'.DS);
+
+// define("UPLOADS",ROOT_PATH.'public'.DS.'uploads'.DS);
 
 // configuration files 
 require_once(CONFIG.'config.php');

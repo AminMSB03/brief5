@@ -1,12 +1,11 @@
 <?php 
     class Users extends DB{
     private $table = "users";
-    private $conn; 
+    public $conn; 
 
     public function __construct()
     {
         $this->conn = $this->connect();
-        
     }
     public function getAllUsers()
     {

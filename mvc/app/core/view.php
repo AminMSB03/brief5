@@ -1,8 +1,9 @@
 <?php 
 class view
 {
-    public static function load($view_name, $view_data=[])
+    static function load($view_name, $view_data=[])
     {
+        
         $files = VIEWS.$view_name.'.php';
         if(file_exists($files)){
             extract($view_data);
